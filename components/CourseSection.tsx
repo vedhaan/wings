@@ -10,10 +10,10 @@ import LevelTag from "./LevelTag";
 import WhatsAppButton from "./WhatsAppButton";
 import type { Course } from "@/lib/courses";
 
-type Layout = "stagger" | "bento";
+type Layout = "stagger" | "bento" | "bentoAlt";
 
 type Props = {
-  id: "kids" | "professionals";
+  id: "kids" | "professionals" | "women";
   theme: Theme;
   chip: string;
   title: string;
@@ -28,28 +28,35 @@ type Props = {
 const BG: Record<Theme, string> = {
   cyan: "bg-wing-cyan-soft",
   violet: "bg-wing-violet-soft",
+  rose: "bg-wing-rose-soft",
 };
 
 const CHIP: Record<Theme, string> = {
   cyan: "bg-wing-cyan text-wing-navy",
   violet: "bg-wing-violet text-white",
+  rose: "bg-wing-rose text-white",
 };
 
 const ACCENT: Record<Theme, string> = {
   cyan: "bg-wing-cyan",
   violet: "bg-wing-violet",
+  rose: "bg-wing-rose",
 };
 
 const GRID: Record<Layout, string> = {
   stagger: "md:grid-cols-2 lg:grid-cols-3",
   bento: "md:grid-cols-2 lg:grid-cols-12",
+  bentoAlt: "md:grid-cols-2 lg:grid-cols-12",
 };
+
 
 function cardClass(layout: Layout, i: number) {
   if (layout === "stagger") return i === 1 ? "lg:mt-10" : "";
-  return ["lg:col-span-7", "lg:col-span-5", "lg:col-span-5", "lg:col-span-7"][
-    i % 4
-  ];
+  const spans =
+    layout === "bento"
+      ? ["lg:col-span-7", "lg:col-span-5", "lg:col-span-5", "lg:col-span-7"]
+      : ["lg:col-span-5", "lg:col-span-7", "lg:col-span-7", "lg:col-span-5"];
+  return spans[i % 4];
 }
 
 export default function CourseSection({
@@ -118,7 +125,9 @@ export default function CourseSection({
             delay={0.15}
             className="w-full max-w-[420px] justify-self-center lg:justify-self-end"
           >
-            <SectionArt variant={id === "kids" ? "kids" : "pros"} />
+            <SectionArt
+              variant={id === "kids" ? "kids" : id === "professionals" ? "pros" : "women"}
+            />
           </Reveal>
         </div>
 

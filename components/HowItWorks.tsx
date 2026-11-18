@@ -71,7 +71,7 @@ export default function HowItWorks() {
         backgroundSize: "26px 26px",
       }}
     >
-      <SectionWave fill="#E8DDFA" />
+      <SectionWave fill="#FDE1EA" />
 
       <div aria-hidden="true" className="pointer-events-none absolute inset-0">
         <span className="absolute right-[7%] top-36 hidden h-10 w-10 animate-float rounded-full bg-wing-cyan sm:block" />

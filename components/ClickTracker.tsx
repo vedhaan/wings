@@ -5,6 +5,7 @@ import { track } from "@/lib/analytics";
 
 function audienceOf(text: string) {
   const t = text.toLowerCase();
+  if (t.includes("woman entrepreneur")) return "women";
   if (t.includes("i'm a parent")) return "kids";
   if (t.includes("working professional")) return "professionals";
   return "general";

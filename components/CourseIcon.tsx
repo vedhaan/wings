@@ -63,6 +63,7 @@ function Shapes({ id }: { id: string }) {
       );
 
     case "pro-web":
+    case "women-web":
       return (
         <>
           <motion.rect {...s} fill="#fff" x="7" y="11" width="50" height="42" rx="6" />
@@ -77,6 +78,7 @@ function Shapes({ id }: { id: string }) {
       );
 
     case "pro-marketing":
+    case "women-marketing":
       return (
         <>
           <motion.path
@@ -107,6 +109,7 @@ function Shapes({ id }: { id: string }) {
       );
 
     case "pro-excel":
+    case "women-finance":
       return (
         <>
           <motion.rect {...s} fill="#fff" x="8" y="12" width="48" height="40" rx="5" />
@@ -118,6 +121,18 @@ function Shapes({ id }: { id: string }) {
         </>
       );
 
+    case "women-whatsapp":
+      return (
+        <>
+          <motion.path
+            {...s}
+            fill="#fff"
+            d="M12 12 H52 Q56 12 56 16 V40 Q56 44 52 44 H30 L18 54 V44 H12 Q8 44 8 40 V16 Q8 12 12 12 Z"
+          />
+          <motion.path {...s} fill="none" d="M20 26 H44" />
+          <motion.path {...s} fill="none" d="M20 34 H36" />
+        </>
+      );
     default:
       return <motion.circle {...s} fill="#fff" cx="32" cy="32" r="18" />;
   }

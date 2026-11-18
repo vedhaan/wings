@@ -4,16 +4,18 @@ import CourseIcon from "./CourseIcon";
 import type { Audience } from "@/lib/site";
 import type { Course } from "@/lib/courses";
 
-export type Theme = "cyan" | "violet";
+export type Theme = "cyan" | "violet" | "rose";
 
 const BANDS: Record<Theme, string[]> = {
   cyan: ["bg-wing-cyan", "bg-wing-sun", "bg-wing-violet"],
   violet: ["bg-wing-violet", "bg-wing-blue", "bg-wing-sun", "bg-wing-cyan"],
+  rose: ["bg-wing-rose", "bg-wing-pink", "bg-wing-purple"],
 };
 
 const TAG: Record<Theme, string> = {
   cyan: "bg-wing-cyan-soft",
   violet: "bg-wing-violet-soft",
+  rose: "bg-wing-rose-soft",
 };
 
 const IS_DEV = process.env.NODE_ENV !== "production";

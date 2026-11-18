@@ -49,13 +49,16 @@ export function directionsUrl() {
   return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(q)}`;
 }
 
-export type Audience = "general" | "kids" | "professionals";
+export type Audience = "general" | "kids" | "professionals" | "women";
+
 
 const MESSAGES: Record<Audience, string> = {
   general: "Hi WINGS, I'd like to know more about your courses.",
   kids: "Hi WINGS, I'm a parent and I'd like to know about the kids courses.",
   professionals:
     "Hi WINGS, I'm a working professional and I'd like to know about your courses.",
+  women:
+    "Hi WINGS, I'm a woman and I'd like to know about your courses.",
 };
 
 export function waLink(audience: Audience = "general", extra?: string) {

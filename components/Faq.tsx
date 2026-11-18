@@ -17,6 +17,11 @@ const TABS: { id: FaqTab; label: string; activeClass: string }[] = [
     label: "Professionals",
     activeClass: "bg-wing-violet text-white",
   },
+  {
+    id: "women",
+    label: "Women",
+    activeClass: "bg-wing-rose text-white",
+  },
 ];
 
 function Item({
@@ -145,7 +150,7 @@ export default function Faq({ from }: { from: string }) {
                       />
                     )}
                     <span
-                      className={`relative ${isActive && t.id === "professionals" ? "text-white" : ""
+                      className={`relative ${isActive && t.id !== "kids" ? "text-white" : ""
                         }`}
                     >
                       {t.label}

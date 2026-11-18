@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import Mascot, { type Pose, type Tone } from "./Mascot";
 
-export type ArtVariant = "kids" | "pros" | "visit" | "faq" | "about";
+export type ArtVariant = "kids" | "pros" | "visit" | "faq" | "about" | "women";
 
 const NAVY = "#14183F";
 const CREAM = "#FBF6EC";
@@ -15,6 +15,7 @@ const CFG: Record<ArtVariant, { bg: string; tone: Tone; pose: Pose }> = {
   visit: { bg: "bg-wing-cyan", tone: "sun", pose: "point" },
   faq: { bg: "bg-wing-sun", tone: "cyan", pose: "think" },
   about: { bg: "bg-wing-violet", tone: "sun", pose: "wave" },
+  women: { bg: "bg-wing-rose", tone: "cyan", pose: "wave" },
 };
 
 function Cloud({
@@ -260,6 +261,56 @@ function Scene({ variant }: { variant: ArtVariant }) {
           <circle cx="200" cy="40" r="7" fill={SUN} stroke={NAVY} strokeWidth="2.5" />
           <rect x="140" y="64" width="16" height="8" rx="2" transform="rotate(-20 148 68)" fill="#2CC6E8" stroke={NAVY} strokeWidth="2" />
           <rect x="250" y="90" width="16" height="8" rx="2" transform="rotate(25 258 94)" fill={CREAM} stroke={NAVY} strokeWidth="2" />
+          <rect x="0" y="296" width="400" height="24" fill={CREAM} stroke={NAVY} strokeWidth="3" />
+        </>
+      );
+    case "women":
+      return (
+        <>
+          <Cloud x={36} y={52} scale={0.8} />
+          <Cloud x={290} y={36} scale={0.7} delay={2} />
+
+          {/* shop front */}
+          <rect x="56" y="132" width="288" height="164" fill="#FFFFFF" stroke={NAVY} strokeWidth="3" />
+
+          {/* striped awning */}
+          {[0, 1, 2, 3, 4, 5].map((i) => {
+            const tx = 56 + i * 48;
+            const bx = 44 + i * 52;
+            return (
+              <polygon
+                key={i}
+                points={`${tx},88 ${tx + 48},88 ${bx + 52},132 ${bx},132`}
+                fill={i % 2 ? "#FFFFFF" : "#2CC6E8"}
+                stroke={NAVY}
+                strokeWidth="3"
+                strokeLinejoin="round"
+              />
+            );
+          })}
+
+          {/* windows */}
+          <rect x="76" y="156" width="80" height="90" fill="#D5F3FA" stroke={NAVY} strokeWidth="3" />
+          <path d="M116 156 V246 M76 201 H156" stroke={NAVY} strokeWidth="3" />
+          <rect x="244" y="156" width="80" height="90" fill="#D5F3FA" stroke={NAVY} strokeWidth="3" />
+          <path d="M284 156 V246 M244 201 H324" stroke={NAVY} strokeWidth="3" />
+
+          {/* open sign */}
+          <g transform="translate(262 252)">
+            <rect width="54" height="24" rx="6" fill={SUN} stroke={NAVY} strokeWidth="3" />
+            <text
+              x="27"
+              y="17"
+              textAnchor="middle"
+              fontSize="13"
+              fontWeight="800"
+              fill="#fff"
+              style={{ fontFamily: "var(--font-display), system-ui, sans-serif" }}
+            >
+              OPEN
+            </text>
+          </g>
+
           <rect x="0" y="296" width="400" height="24" fill={CREAM} stroke={NAVY} strokeWidth="3" />
         </>
       );

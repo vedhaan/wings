@@ -43,7 +43,7 @@ export default function FinalCta({ from }: { from: string }) {
             Message us on WhatsApp and tell us who the course is for.
           </p>
 
-          <div className="mt-10 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:items-center">
+          <div className="mt-10 flex flex-col items-stretch justify-center gap-4 sm:flex-row sm:flex-wrap sm:items-center">
             <a
               href={waLink("kids")}
               target="_blank"
@@ -60,6 +60,15 @@ export default function FinalCta({ from }: { from: string }) {
               className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-wing-navy bg-wing-cream px-7 py-4 font-display text-lg font-bold text-wing-navy shadow-pop transition-all hover:-translate-y-1 hover:shadow-pop-lg active:translate-y-0 active:shadow-none"
             >
               I&apos;m a professional
+              <span aria-hidden="true">&rarr;</span>
+            </a>
+            <a
+              href={waLink("women")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full border-2 border-wing-navy bg-wing-rose px-7 py-4 font-display text-lg font-bold text-white shadow-pop transition-all hover:-translate-y-1 hover:shadow-pop-lg active:translate-y-0 active:shadow-none"
+            >
+              I&apos;m a woman entrepreneur
               <span aria-hidden="true">&rarr;</span>
             </a>
           </div>

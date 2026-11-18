@@ -5,34 +5,47 @@ import { motion } from "framer-motion";
 import Logo from "./Logo";
 import WhatsAppButton from "./WhatsAppButton";
 
-type Tab = "kids" | "professionals";
+type Tab = "kids" | "professionals" | "women";
 
-const TABS: { id: Tab; label: string; activeClass: string }[] = [
-    { id: "kids", label: "Kids", activeClass: "bg-wing-cyan text-wing-navy" },
+const TABS: { id: Tab; label: string; short: string; activeClass: string }[] = [
+    {
+        id: "kids",
+        label: "Kids",
+        short: "Kids",
+        activeClass: "bg-wing-cyan text-wing-navy",
+    },
     {
         id: "professionals",
         label: "Professionals",
+        short: "Pros",
         activeClass: "bg-wing-violet text-white",
+    },
+    {
+        id: "women",
+        label: "Women",
+        short: "Women",
+        activeClass: "bg-wing-rose text-white",
     },
 ];
 
 export default function Navbar() {
     const [active, setActive] = useState<Tab | null>(null);
     const [scrolled, setScrolled] = useState(false);
+    
 
     useEffect(() => {
         const onScroll = () => {
             setScrolled(window.scrollY > 8);
 
             const kids = document.getElementById("kids");
-            const pros = document.getElementById("professionals");
+            const women = document.getElementById("women");
 
             // above the course sections
             if (kids && kids.getBoundingClientRect().top > window.innerHeight * 0.6) {
                 setActive(null);
             }
             // below the course sections
-            if (pros && pros.getBoundingClientRect().bottom < window.innerHeight * 0.4) {
+            if (women && women.getBoundingClientRect().bottom < window.innerHeight * 0.4) {
                 setActive(null);
             }
         };
@@ -96,10 +109,10 @@ export default function Navbar() {
                                     />
                                 )}
                                 <span
-                                    className={`relative ${isActive ? (t.id === "professionals" ? "text-white" : "") : ""
-                                        }`}
+                                    className={`relative ${isActive && t.id !== "kids" ? "text-white" : ""}`}
                                 >
-                                    {t.label}
+                                    <span className="sm:hidden">{t.short}</span>
+                                    <span className="hidden sm:inline">{t.label}</span>
                                 </span>
                             </a>
                         );

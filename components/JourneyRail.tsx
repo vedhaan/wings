@@ -9,6 +9,8 @@ const LEVELS = [
   { label: "Process", ids: ["how-it-works"] },
   { label: "Know us", ids: ["find-us", "faq", "about"] },
   { label: "Start", ids: ["start"] },
+  { label: "Know us", ids: ["find-us", "faq", "about", "founders"] },
+  { label: "Courses", ids: ["kids", "professionals", "women"] },
 ];
 
 export default function JourneyRail() {

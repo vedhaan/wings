@@ -22,10 +22,12 @@ const SKY =
 const LINKS = [
   { href: "#kids", label: "Kids courses" },
   { href: "#professionals", label: "Professional courses" },
+  { href: "#women", label: "Women entrepreneurs" },
   { href: "#how-it-works", label: "How it works" },
   ...(SHOW_FIND_US ? [{ href: "#find-us", label: "Find us" }] : []),
   { href: "#faq", label: "FAQ" },
   { href: "#about", label: "About" },
+  { href: "#founders", label: "Founders" },
 ];
 
 const LETTERS = [
@@ -383,7 +385,7 @@ export default function Footer({ from }: { from: string }) {
             </div>
             <p className="mt-5 max-w-sm text-lg text-wing-cream/85">
               Coding, AI and digital skills classes in {SITE.city}, for school
-              students and working professionals.
+              students, working professionals and women entrepreneurs.
             </p>
           </Reveal>
         </div>

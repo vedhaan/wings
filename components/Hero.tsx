@@ -78,6 +78,17 @@ const CARDS = [
       "block overflow-hidden rounded-3xl border-2 border-wing-navy bg-wing-violet p-6 text-white shadow-pop transition-shadow hover:shadow-pop-lg sm:p-7",
     rotate: 1.5,
   },
+  {
+    id: "women",
+    href: "#women",
+    chip: "For women entrepreneurs",
+    title: "I'm a woman entrepreneur",
+    text: "Marketing, websites, finance and WhatsApp skills to run or start your business.",
+    cta: "See women entrepreneur courses",
+    className:
+      "block overflow-hidden rounded-3xl border-2 border-wing-navy bg-wing-rose p-6 text-white shadow-pop transition-shadow hover:shadow-pop-lg sm:p-7 md:col-span-2 lg:col-span-1",
+    rotate: -1,
+  },
 ];
 
 export default function Hero() {
@@ -188,7 +199,7 @@ export default function Hero() {
               className="mt-6 max-w-xl text-lg text-wing-navy/80 sm:text-xl"
             >
               Coding, AI and digital skills classes in Bhavnagar, for school
-              students and working professionals.
+              students, working professionals and women entrepreneurs.
             </motion.p>
 
             <motion.div
@@ -247,7 +258,7 @@ export default function Hero() {
             <LevelTag n={1} label="Choose your path" />
           </motion.div>
 
-          <div className="mt-4 grid gap-5 md:grid-cols-2 lg:max-w-4xl">
+          <div className="mt-4 grid gap-5 md:grid-cols-2">
             {CARDS.map((c) => (
               <TiltCard
                 key={c.id}

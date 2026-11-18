@@ -1,5 +1,6 @@
 import { SITE, SITE_URL } from "@/lib/site";
 import { ABOUT } from "@/lib/about";
+import { COFOUNDERS } from "@/lib/founders";
 
 export default function JsonLd() {
   const data = {
@@ -14,6 +15,7 @@ export default function JsonLd() {
       "@type": "Organization",
       name: ABOUT.company,
       url: ABOUT.url,
+      founder: COFOUNDERS.map((p) => ({ "@type": "Person", name: p.name })),
     },
     ...(SITE.address
       ? {

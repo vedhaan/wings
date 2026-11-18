@@ -19,11 +19,14 @@ const config: Config = {
           "cyan-soft": "#D5F3FA",
           "violet-soft": "#E8DDFA",
           "sun-soft": "#FFE5D1",
+          rose: "#EA5580",
+          "rose-soft": "#FDE1EA",
         },
       },
       fontFamily: {
         display: ["var(--font-display)", "system-ui", "sans-serif"],
         body: ["var(--font-body)", "system-ui", "sans-serif"],
+        hand: ["var(--font-hand)", "cursive"],
       },
       boxShadow: {
         "pop-sm": "3px 3px 0 0 #14183F",

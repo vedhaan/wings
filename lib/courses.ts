@@ -77,3 +77,45 @@ export const PRO_COURSES: Course[] = [
     outcome: null,
   },
 ];
+
+export const WOMEN_COURSES: Course[] = [
+  {
+    id: "women-marketing",
+    title: "Digital marketing and social media for business",
+    blurb:
+      "Learn how to promote your business online and reach customers on social media.",
+    tags: [],
+    duration: null,
+    level: null,
+    outcome: null,
+  },
+  {
+    id: "women-web",
+    title: "Website or online store setup",
+    blurb: "Set up a website or an online store for your business.",
+    tags: [],
+    duration: null,
+    level: null,
+    outcome: null,
+  },
+  {
+    id: "women-finance",
+    title: "Excel, accounts and finance basics",
+    blurb:
+      "Keep track of money, maintain simple accounts and use Excel to run your business.",
+    tags: [],
+    duration: null,
+    level: null,
+    outcome: null,
+  },
+  {
+    id: "women-whatsapp",
+    title: "WhatsApp Business and customer handling",
+    blurb:
+      "Use WhatsApp Business to talk to customers, share your products and handle orders.",
+    tags: [],
+    duration: null,
+    level: null,
+    outcome: null,
+  },
+];
