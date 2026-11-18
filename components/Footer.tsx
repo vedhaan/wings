@@ -1,12 +1,13 @@
 "use client";
 
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import Logo from "./Logo";
 import Mascot from "./Mascot";
 import Reveal from "./Reveal";
 import SectionWave from "./SectionWave";
 import WhatsAppButton from "./WhatsAppButton";
+
 
 import { ABOUT } from "@/lib/about";
 import { IS_DEV, SHOW_FIND_US, SITE, directionsUrl } from "@/lib/site";
@@ -357,7 +358,11 @@ function StripRow({ hidden = false }: { hidden?: boolean }) {
 
 export default function Footer({ from }: { from: string }) {
   const directions = directionsUrl();
+  const [year, setYear] = useState(2026);
 
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
   return (
     <footer className="relative overflow-hidden bg-wing-navy text-wing-cream">
       <SectionWave fill={from} />
@@ -503,8 +508,7 @@ export default function Footer({ from }: { from: string }) {
         <div className="relative mx-auto max-w-6xl">
           <div className="mt-12 flex flex-col gap-5 border-t-2 border-wing-cream/15 pt-6 text-sm text-wing-cream/70 md:flex-row md:items-center md:justify-between">
             <p>
-              &copy; {new Date().getFullYear()} {SITE.name}. All rights
-              reserved.
+              &copy; {year} {SITE.name}. All rights reserved.
             </p>
 
             <p>
