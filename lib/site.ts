@@ -16,9 +16,9 @@ export const SITE: {
 
   // Fill these in when you have them.
   // address: "103, Example Complex, Ring Road, Bhavnagar"
-  address: null,
+  address: "103, First Floor, Krushnakunj Complex, Opp. New Malhar Dhosa, Ring Road, Bhavnagar - 364001",
   // Optional: what Google Maps should search. Falls back to the address.
-  mapQuery: null,
+  mapQuery: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3705.9951337836046!2d72.1602622628455!3d21.741714351547998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395f5b8c89e884fb%3A0x6c46275d4c0fc58f!2sVedhaan%20Technology!5e0!3m2!1sen!2sin!4v1794980771231!5m2!1sen!2sin",
   // timings: [{ label: "Kids batches", value: "Mon to Fri, 4 pm to 7 pm" }]
   timings: null,
 };
